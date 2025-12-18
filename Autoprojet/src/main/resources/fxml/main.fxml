@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.atelier.controllers.MainController" stylesheets="@css/style.css">
+   <top>
+      <VBox>
+         <MenuBar>
+            <Menu text="Fichier">
+               <MenuItem text="Quitter" onAction="#quitter"/>
+            </Menu>
+            <Menu text="Données">
+               <MenuItem text="Initialiser les données" onAction="#initialiserDonnees"/>
+            </Menu>
+         </MenuBar>
+         <Label text="Application de Gestion d'Atelier Automobile" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 10px;"/>
+      </VBox>
+   </top>
+   <center>
+      <TabPane fx:id="tabPane">
+         <Tab text="Clients et Véhicules"/>
+         <Tab text="Ordres de Réparation en Cours"/>
+         <Tab text="Détail Ordre de Réparation"/>
+         <Tab text="Stock Pièces"/>
+         <Tab text="Facturation"/>
+      </TabPane>
+   </center>
+</BorderPane>
+

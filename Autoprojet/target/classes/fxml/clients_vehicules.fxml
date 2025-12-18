@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.atelier.controllers.ClientsVehiculesController" spacing="15" styleClass="container">
+   <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+      <Button text="🔄 Actualiser" onAction="#actualiser" styleClass="secondary"/>
+      <Button text="➕ Nouveau Client" onAction="#nouveauClient" styleClass="success"/>
+      <Button text="🚗 Nouveau Véhicule" onAction="#nouveauVehicule" styleClass="success"/>
+   </HBox>
+   
+   <SplitPane dividerPositions="0.5">
+      <VBox spacing="10" prefWidth="400" styleClass="form-section">
+         <Label text="👥 Clients" styleClass="section"/>
+         <TableView fx:id="tableClients" prefHeight="500">
+            <columns>
+               <TableColumn text="ID" prefWidth="50"/>
+               <TableColumn text="Nom" prefWidth="150"/>
+               <TableColumn text="Email" prefWidth="200"/>
+               <TableColumn text="Téléphone" prefWidth="150"/>
+            </columns>
+         </TableView>
+      </VBox>
+      
+      <VBox spacing="10" prefWidth="400" styleClass="form-section">
+         <Label text="🚗 Véhicules" styleClass="section"/>
+         <TableView fx:id="tableVehicules" prefHeight="500">
+            <columns>
+               <TableColumn text="ID" prefWidth="50"/>
+               <TableColumn text="Immatriculation" prefWidth="120"/>
+               <TableColumn text="Marque" prefWidth="100"/>
+               <TableColumn text="Modèle" prefWidth="100"/>
+               <TableColumn text="Client" prefWidth="150"/>
+            </columns>
+         </TableView>
+      </VBox>
+   </SplitPane>
+   
+   <VBox spacing="10" fx:id="formClient" visible="false" styleClass="form-panel">
+      <Label text="➕ Ajouter un nouveau client" styleClass="section"/>
+      <HBox spacing="15" alignment="CENTER_LEFT">
+         <VBox spacing="5">
+            <Label text="Nom *"/>
+            <TextField fx:id="clientNomField" prefWidth="200" promptText="Ex: Dupont"/>
+         </VBox>
+         <VBox spacing="5">
+            <Label text="Email *"/>
+            <TextField fx:id="clientEmailField" prefWidth="250" promptText="Ex: dupont@email.com"/>
+         </VBox>
+         <VBox spacing="5">
+            <Label text="Téléphone *"/>
+            <TextField fx:id="clientTelephoneField" prefWidth="150" promptText="Ex: 0123456789"/>
+         </VBox>
+         <VBox spacing="5" alignment="BOTTOM_CENTER">
+            <Button text="✓ Enregistrer" onAction="#enregistrerClient" styleClass="success" prefWidth="120"/>
+            <Button text="✗ Annuler" onAction="#annulerClient" styleClass="secondary" prefWidth="120"/>
+         </VBox>
+      </HBox>
+   </VBox>
+   
+   <VBox spacing="10" fx:id="formVehicule" visible="false" styleClass="form-panel">
+      <Label text="🚗 Ajouter un nouveau véhicule" styleClass="section"/>
+      <HBox spacing="15" alignment="CENTER_LEFT">
+         <VBox spacing="5">
+            <Label text="Client *"/>
+            <ComboBox fx:id="vehiculeClientCombo" prefWidth="250" promptText="Sélectionner un client"/>
+         </VBox>
+         <VBox spacing="5">
+            <Label text="Immatriculation *"/>
+            <TextField fx:id="vehiculeImmatField" prefWidth="150" promptText="AB-123-CD"/>
+         </VBox>
+         <VBox spacing="5">
+            <Label text="Marque *"/>
+            <TextField fx:id="vehiculeMarqueField" prefWidth="120" promptText="Ex: Renault"/>
+         </VBox>
+         <VBox spacing="5">
+            <Label text="Modèle *"/>
+            <TextField fx:id="vehiculeModeleField" prefWidth="120" promptText="Ex: Clio"/>
+         </VBox>
+         <VBox spacing="5" alignment="BOTTOM_CENTER">
+            <Button text="✓ Enregistrer" onAction="#enregistrerVehicule" styleClass="success" prefWidth="120"/>
+            <Button text="✗ Annuler" onAction="#annulerVehicule" styleClass="secondary" prefWidth="120"/>
+         </VBox>
+      </HBox>
+      <HBox spacing="10" alignment="CENTER_LEFT" styleClass="info-box">
+         <Label text="ℹ️ Format immatriculation: AB-123-CD (français) ou 1234-AB-56 (européen)" style="-fx-text-fill: #1976D2;"/>
+      </HBox>
+   </VBox>
+</VBox>
+

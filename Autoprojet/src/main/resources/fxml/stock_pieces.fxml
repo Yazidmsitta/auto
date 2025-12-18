@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.atelier.controllers.StockPiecesController" spacing="15" styleClass="container">
+   <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+      <Button text="🔄 Actualiser" onAction="#actualiser" styleClass="secondary"/>
+      <Button text="➕ Nouvelle pièce" onAction="#nouvellePiece" styleClass="success"/>
+   </HBox>
+   
+   <TableView fx:id="tablePieces" prefHeight="500">
+      <columns>
+         <TableColumn text="ID" prefWidth="50"/>
+         <TableColumn text="Référence" prefWidth="150"/>
+         <TableColumn text="Nom" prefWidth="250"/>
+         <TableColumn text="Stock" prefWidth="100"/>
+         <TableColumn text="Prix" prefWidth="100"/>
+      </columns>
+   </TableView>
+   
+   <HBox spacing="10" style="-fx-padding: 10px;">
+      <Button text="📦 Modifier stock" onAction="#modifierStock" fx:id="btnModifierStock" styleClass="secondary"/>
+      <Button text="💰 Modifier prix" onAction="#modifierPrix" fx:id="btnModifierPrix" styleClass="secondary"/>
+   </HBox>
+   
+   <VBox spacing="10" fx:id="formAjout" visible="false" styleClass="form-panel">
+      <Label text="➕ Ajouter une nouvelle pièce" styleClass="section"/>
+      <HBox spacing="15" alignment="CENTER_LEFT">
+         <VBox spacing="5">
+            <Label text="Référence *"/>
+            <TextField fx:id="refField" prefWidth="150" promptText="Ex: P001"/>
+         </VBox>
+         <VBox spacing="5">
+            <Label text="Nom *"/>
+            <TextField fx:id="nomField" prefWidth="250" promptText="Ex: Plaquette de frein"/>
+         </VBox>
+         <VBox spacing="5">
+            <Label text="Stock *"/>
+            <TextField fx:id="stockField" prefWidth="100" promptText="Ex: 20"/>
+         </VBox>
+         <VBox spacing="5">
+            <Label text="Prix (€) *"/>
+            <TextField fx:id="prixField" prefWidth="100" promptText="Ex: 45.50"/>
+         </VBox>
+         <VBox spacing="5" alignment="BOTTOM_CENTER">
+            <Button text="✓ Enregistrer" onAction="#enregistrerPiece" styleClass="success" prefWidth="120"/>
+            <Button text="✗ Annuler" onAction="#annulerAjout" styleClass="secondary" prefWidth="120"/>
+         </VBox>
+      </HBox>
+   </VBox>
+</VBox>
+

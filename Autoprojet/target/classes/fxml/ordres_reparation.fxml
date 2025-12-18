@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.atelier.controllers.OrdresReparationController" spacing="15" styleClass="container">
+   <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+      <Label text="Filtrer par état:" styleClass="section"/>
+      <ComboBox fx:id="filtreEtat" onAction="#filtrerParEtat" prefWidth="150"/>
+      <Button text="🔄 Actualiser" onAction="#actualiser" styleClass="secondary"/>
+      <Button text="➕ Nouvel OR" onAction="#nouvelOR" styleClass="success"/>
+   </HBox>
+   
+   <TableView fx:id="tableOrdres" prefHeight="600">
+      <columns>
+         <TableColumn text="ID" prefWidth="50"/>
+         <TableColumn text="Date" prefWidth="100"/>
+         <TableColumn text="Véhicule" prefWidth="200"/>
+         <TableColumn text="Client" prefWidth="200"/>
+         <TableColumn text="État" prefWidth="100"/>
+         <TableColumn text="Total" prefWidth="100"/>
+      </columns>
+   </TableView>
+   
+   <HBox spacing="10" style="-fx-padding: 10px;">
+      <Button text="👁️ Voir détails" onAction="#voirDetails" fx:id="btnVoirDetails" styleClass="secondary"/>
+      <Button text="✏️ Changer état" onAction="#changerEtat" fx:id="btnChangerEtat" styleClass="success"/>
+   </HBox>
+</VBox>
+

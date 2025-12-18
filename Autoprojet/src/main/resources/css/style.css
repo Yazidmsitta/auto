@@ -1,0 +1,237 @@
+/* Style général de l'application */
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Style des onglets */
+.tab-pane {
+    -fx-background-color: #ffffff;
+}
+
+.tab {
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 10 20 10 20;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.tab:hover {
+    -fx-background-color: #bbdefb;
+}
+
+/* Style des tableaux */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+}
+
+.table-view .column-header {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2196F3;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f5f5f5;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+/* Style des boutons */
+.button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1976D2;
+}
+
+.button:pressed {
+    -fx-background-color: #0D47A1;
+}
+
+.button.secondary {
+    -fx-background-color: #757575;
+}
+
+.button.secondary:hover {
+    -fx-background-color: #616161;
+}
+
+.button.success {
+    -fx-background-color: #4CAF50;
+}
+
+.button.success:hover {
+    -fx-background-color: #45a049;
+}
+
+.button.danger {
+    -fx-background-color: #f44336;
+}
+
+.button.danger:hover {
+    -fx-background-color: #da190b;
+}
+
+/* Style des labels */
+.label {
+    -fx-text-fill: #212121;
+}
+
+.label.title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2196F3;
+}
+
+.label.section {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #424242;
+}
+
+/* Style des champs de texte */
+.text-field, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdbdbd;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-padding: 6;
+}
+
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+}
+
+.combo-box {
+    -fx-cursor: hand;
+}
+
+.combo-box:disabled {
+    -fx-opacity: 0.6;
+    -fx-cursor: default;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #2196F3;
+    -fx-cursor: hand;
+}
+
+.combo-box .arrow-button:hover {
+    -fx-background-color: #1976D2;
+}
+
+/* Style des formulaires */
+.form-section {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+/* Style des panneaux de formulaire */
+.form-panel {
+    -fx-background-color: #fafafa;
+    -fx-padding: 20;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+/* Style du menu */
+.menu-bar {
+    -fx-background-color: #2196F3;
+}
+
+.menu {
+    -fx-text-fill: white;
+}
+
+.menu-item {
+    -fx-background-color: white;
+    -fx-text-fill: #212121;
+}
+
+.menu-item:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+/* Style des alertes */
+.alert {
+    -fx-background-color: white;
+}
+
+/* Style des séparateurs */
+.separator {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Style des SplitPane */
+.split-pane {
+    -fx-background-color: #f5f5f5;
+}
+
+.split-pane-divider {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Style des VBox et HBox avec fond */
+.container {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+/* Style pour les informations */
+.info-box {
+    -fx-background-color: #e3f2fd;
+    -fx-padding: 10;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+/* Style pour les sections importantes */
+.highlight-section {
+    -fx-background-color: #fff3e0;
+    -fx-padding: 15;
+    -fx-border-color: #ff9800;
+    -fx-border-width: 2;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+

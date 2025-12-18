@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.atelier.controllers.DetailORController" spacing="15" styleClass="container">
+   <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+      <Label text="Ordre de Réparation:" styleClass="section"/>
+      <ComboBox fx:id="orCombo" prefWidth="400" promptText="Sélectionner un OR"/>
+      <Button text="📋 Charger" onAction="#chargerOR" styleClass="success"/>
+      <Button text="🔄 Actualiser" onAction="#actualiser" styleClass="secondary"/>
+   </HBox>
+   
+   <HBox spacing="10">
+      <VBox spacing="5" prefWidth="400">
+         <Label text="Informations OR" style="-fx-font-weight: bold;"/>
+         <Label text="ID:"/>
+         <Label fx:id="labelId"/>
+         <Label text="Date:"/>
+         <Label fx:id="labelDate"/>
+         <Label text="Véhicule:"/>
+         <Label fx:id="labelVehicule"/>
+         <Label text="Client:"/>
+         <Label fx:id="labelClient"/>
+         <Label text="État:"/>
+         <Label fx:id="labelEtat"/>
+         <Label text="Total:"/>
+         <Label fx:id="labelTotal" style="-fx-font-weight: bold;"/>
+      </VBox>
+      
+      <VBox spacing="5" prefWidth="400">
+         <Label text="Ajouter Prestation" style="-fx-font-weight: bold;"/>
+         <Label text="Description:"/>
+         <TextField fx:id="descriptionField"/>
+         <Label text="Type:"/>
+         <ComboBox fx:id="typeCombo" prefWidth="200"/>
+         <Label text="Pièce (si type PIECE):"/>
+         <ComboBox fx:id="pieceCombo" prefWidth="200"/>
+         <Label text="Quantité:"/>
+         <TextField fx:id="quantiteField"/>
+         <Label text="Prix unitaire:"/>
+         <TextField fx:id="prixField"/>
+         <Button text="Ajouter" onAction="#ajouterPrestation"/>
+      </VBox>
+   </HBox>
+   
+   <Label text="Prestations" style="-fx-font-weight: bold;"/>
+   <TableView fx:id="tablePrestations" prefHeight="300">
+      <columns>
+         <TableColumn text="Description" prefWidth="200"/>
+         <TableColumn text="Type" prefWidth="100"/>
+         <TableColumn text="Quantité" prefWidth="80"/>
+         <TableColumn text="Prix unitaire" prefWidth="100"/>
+         <TableColumn text="Sous-total" prefWidth="100"/>
+      </columns>
+   </TableView>
+   
+   <HBox spacing="10">
+      <Button text="Supprimer prestation" onAction="#supprimerPrestation" fx:id="btnSupprimer"/>
+   </HBox>
+</VBox>
+

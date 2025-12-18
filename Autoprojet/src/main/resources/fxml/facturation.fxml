@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.atelier.controllers.FacturationController" spacing="15" styleClass="container">
+   <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+      <Button text="🔄 Actualiser" onAction="#actualiser" styleClass="secondary"/>
+      <Button text="🧾 Générer facture pour OR terminé" onAction="#genererFacture" styleClass="success"/>
+   </HBox>
+   
+   <Label text="🧾 Factures" styleClass="section"/>
+   <TableView fx:id="tableFactures" prefHeight="400">
+      <columns>
+         <TableColumn text="ID" prefWidth="50"/>
+         <TableColumn text="Date" prefWidth="100"/>
+         <TableColumn text="OR ID" prefWidth="80"/>
+         <TableColumn text="Véhicule" prefWidth="200"/>
+         <TableColumn text="Total" prefWidth="100"/>
+      </columns>
+   </TableView>
+   
+   <VBox spacing="10" fx:id="formGeneration" visible="false" styleClass="form-panel">
+      <Label text="🧾 Générer une facture" styleClass="section"/>
+      <HBox spacing="15" alignment="CENTER_LEFT">
+         <VBox spacing="5">
+            <Label text="Ordre de Réparation terminé *"/>
+            <ComboBox fx:id="orCombo" prefWidth="400" promptText="Sélectionner un OR terminé" editable="false" disable="false"/>
+         </VBox>
+         <VBox spacing="5" alignment="BOTTOM_CENTER">
+            <Button text="✓ Générer" onAction="#genererFacturePourOR" styleClass="success" prefWidth="120"/>
+            <Button text="✗ Annuler" onAction="#annulerGeneration" styleClass="secondary" prefWidth="120"/>
+         </VBox>
+      </HBox>
+   </VBox>
+</VBox>
+
